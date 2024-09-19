@@ -1,2 +1,2 @@
 # Java-Sqlite
-Sqlite를 사용해서 하겠습니다
+Sqlite를 사용해보겠습니다
