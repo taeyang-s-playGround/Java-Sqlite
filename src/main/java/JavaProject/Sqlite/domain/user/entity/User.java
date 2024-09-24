@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Long id;
 
     @Column(columnDefinition = "varchar(30)", nullable = false, unique = true)
@@ -28,19 +28,13 @@ public class User {
     @Column(columnDefinition = "varchar(30)", nullable = false)
     private String name;
 
-    @Column(columnDefinition = "varchar(500)")
-    private String introduction;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
-    private Integer score;
-
-    public void modifyInfo(String accountId, String name, String introduction) {
+    public void modifyInfo(String accountId, String name) {
         this.accountId = accountId;
         this.name = name;
-        this.introduction = introduction;
     }
 
     public void changePassword(String password) {

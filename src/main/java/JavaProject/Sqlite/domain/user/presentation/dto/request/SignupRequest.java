@@ -23,10 +23,4 @@ public class SignupRequest {
     @NotNull(message = "닉네임을 입력하세요")
     private String name;
 
-    @Nullable
-    private String introduction;
-
-    @Nullable
-    private Long areaId;
-
 }

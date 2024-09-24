@@ -29,17 +29,15 @@ public class SignupService {
 
         String password = passwordEncoder.encode(signupRequest.getPassword());
 
-            userRepository.save(
-                User.builder()
-                    .accountId(signupRequest.getAccountId())
-                    .email(signupRequest.getEmail())
-                    .password(password)
-                    .name(signupRequest.getName())
-                    .introduction(signupRequest.getIntroduction())
-                    .role(Role.STUDENT)
-                    .score(0)
-                    .build()
-            );
+        userRepository.save(
+            User.builder()
+                .accountId(signupRequest.getAccountId())
+                .email(signupRequest.getEmail())
+                .password(password)
+                .name(signupRequest.getName())
+                .role(Role.STUDENT)
+                .build()
+        );
 
 
         return jwtTokenProvider.createToken(signupRequest.getAccountId());
