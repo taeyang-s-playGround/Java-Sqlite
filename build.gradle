@@ -25,15 +25,8 @@ repositories {
 
 dependencies {
 
-	//openai
-	implementation 'io.github.flashvayne:chatgpt-spring-boot-starter:1.0.4'
-
-	//queryDSL
-	implementation 'com.querydsl:querydsl-jpa'
-	annotationProcessor(
-			"javax.persistence:javax.persistence-api",
-			"javax.annotation:javax.annotation-api",
-			"com.querydsl:querydsl-apt:5.0.0:jpa")
+	//sqlite
+	implementation 'org.xerial:sqlite-jdbc:3.46.1.0'
 
 	//redis
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
@@ -41,12 +34,6 @@ dependencies {
 
 	//jwt
 	implementation("io.jsonwebtoken:jjwt:0.9.1")
-
-	//swagger
-	implementation 'org.springdoc:springdoc-openapi-ui:1.7.0'
-
-	//cache
-	implementation 'org.springframework.boot:spring-boot-starter-cache'
 
 	//jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -57,9 +44,6 @@ dependencies {
 
 	//validation
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
-
-	//mysql
-	runtimeOnly 'com.mysql:mysql-connector-j'
 
 	//lombok
 	compileOnly 'org.projectlombok:lombok'
