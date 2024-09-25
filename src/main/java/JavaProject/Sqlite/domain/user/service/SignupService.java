@@ -10,11 +10,10 @@ import JavaProject.Sqlite.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
+//@Transactional
 public class SignupService {
 
     private final UserRepository userRepository;
@@ -22,7 +21,6 @@ public class SignupService {
     private final JwtTokenProvider jwtTokenProvider;
 
     public TokenResponse execute(SignupRequest signupRequest) {
-
         if (userRepository.existsByAccountId(signupRequest.getAccountId())) {
             throw UserAlreadyExistException.EXCEPTION;
         }
