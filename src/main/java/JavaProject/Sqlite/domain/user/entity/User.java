@@ -13,19 +13,18 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
-    @Column(columnDefinition = "varchar(30)", nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     private String accountId;
 
-    @Column(columnDefinition = "varchar(30)", nullable = false)
     private String email;
 
-    @Column(columnDefinition = "varchar(100)", nullable = false)
+    @Column(nullable = false)
     private String password;
 
-    @Column(columnDefinition = "varchar(30)", nullable = false)
+    @Column(nullable = false)
     private String name;
 
     @Enumerated(EnumType.STRING)
